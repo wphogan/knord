@@ -1,0 +1,22 @@
+# General settings
+model_name: 'knord'
+is_debug: False
+seed: 41
+dataset: retacred # tacred, retacred, fewrel
+is_nonorel: True
+eval_only: False
+
+# Trainer
+save_best_model: True
+use_cluster_data: True
+batch_size: 128
+epochs: 5
+lr: 8e-5
+dropout: 0.25
+max_length: 100
+hidden_size: 768
+foundation_model: 'microsoft/deberta-base'
+max_grad_norm: 1
+optimizer: AdamW
+high_q_data_threshold: 0.15
+exp_description: ''
