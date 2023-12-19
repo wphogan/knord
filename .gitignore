@@ -1,6 +1,11 @@
 # Custom
 .idea/
 .vscode/
+.DS_Store
+data/
+data.zip
+saved_models.zip
+saved_models/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

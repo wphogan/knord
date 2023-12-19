@@ -7,7 +7,7 @@
 ## Description
 
 This repo contains the source code for the
-paper [Open-world Semi-supervised Generalized Relation Discovery Aligned in a Real-world Setting](https://paper_coming_soon).
+paper [Open-world Semi-supervised Generalized Relation Discovery Aligned in a Real-world Setting](https://aclanthology.org/2023.emnlp-main.880/).
 
 ## Project Structure
 
@@ -40,12 +40,11 @@ paper [Open-world Semi-supervised Generalized Relation Discovery Aligned in a Re
 ## Instructions
 
 ### 📓 Pre-run notes:
-- For convenience, we provide the
-  complete [preprocessed datasets, splits, saved models, and logs](https://data_coming_soon) (link coming soon) for all of our experiments.
+- For convenience, we provide the [preprocessed datasets and saved models](https://drive.google.com/drive/folders/1bQo-5A96Qjj4TvtVtDfO6ogMqDALXGfh?usp=drive_link) for our main experiments.
 - By using the preprocessed data and saved models, you can jump to any stage detailed below without needing to run the
   previous stages.
-- Please see the [KNoRD paper](https://paper_coming_soon) (link coming soon) for details about each stage of training and evaluation.
-- The code in this repo was developed using Python (v3.9), PyTorch (v1.12.1), Hugginface transformers (v4.22.2), and
+- Please see the [KNoRD paper](https://aclanthology.org/2023.emnlp-main.880/) (link coming soon) for details about each stage of training and evaluation.
+- The code in this repo was developed using Python (v3.9), PyTorch (v1.12.1), Hugging Face transformers (v4.22.2), and
   CUDA (v11.6)
 - Run settings are specified in the configuration files in `/configs`. Default settings are set in `/utils/utils_config.py`. All settings can be overridden via the command
   line using the `--` prefix. For example, to override the `batch_size` setting in `/configs/knord.yaml`,
@@ -53,10 +52,9 @@ paper [Open-world Semi-supervised Generalized Relation Discovery Aligned in a Re
 
 ### 0️⃣ Initialize
 - Install dependencies from `requirements.txt`
-- Download [data and saved KNoRD models](https://data_coming_soon) (link coming soon).
+- Download [data and saved KNoRD models](https://drive.google.com/drive/folders/1bQo-5A96Qjj4TvtVtDfO6ogMqDALXGfh?usp=drive_link).
 - Unzip `data.zip` and then move both `data` and `saved_models` into the project's root directory.
-- [OPTIONAL] All the preprocessed data is provided, but if you'd like to preprocess the data yourself, follow the data
-  preprocessing instructions in the Appendix of the paper.
+- For data preprocessing steps, see the instructions in the Appendix of the paper.
 
 ### 1️⃣ Prompt-model training, GMM clustering, and weak label generation
 - Detailed instructions to train the prompt model, cluster using GMM, and generate weak labels are provided in the `/clustering` subdirectory.
@@ -82,8 +80,24 @@ python run_knord.py --config=knord.yaml --eval_only
 ---
 _If you found this code useful, please consider citing our paper:_
 
+
 ```
-@inproceedings{
-  coming-soon
-} 
+@inproceedings{hogan-etal-2023-open,
+    title = "Open-world Semi-supervised Generalized Relation Discovery Aligned in a Real-world Setting",
+    author = "Hogan, William  and
+      Li, Jiacheng  and
+      Shang, Jingbo",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.880",
+    doi = "10.18653/v1/2023.emnlp-main.880",
+    pages = "14227--14242",
+    abstract = "Open-world Relation Extraction (OpenRE) has recently garnered significant attention. However, existing approaches tend to oversimplify the problem by assuming that all instances of unlabeled data belong to novel classes, thereby limiting the practicality of these methods. We argue that the OpenRE setting should be more aligned with the characteristics of real-world data. Specifically, we propose two key improvements: (a) unlabeled data should encompass known and novel classes, including negative instances; and (b) the set of novel classes should represent long-tail relation types. Furthermore, we observe that popular relations can often be implicitly inferred through specific patterns, while long-tail relations tend to be explicitly expressed. Motivated by these insights, we present a method called KNoRD (Known and Novel Relation Discovery), which effectively classifies explicitly and implicitly expressed relations from known and novel classes within unlabeled data. Experimental evaluations on several Open-world RE benchmarks demonstrate that KNoRD consistently outperforms other existing methods, achieving significant performance gains.",
+}
 ```
